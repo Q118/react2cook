@@ -16,17 +16,18 @@ export default class Counter extends Component {
 	render() {
 		return (
 			<div>
-				<button onClick={() => this.changeCount(-1) }> - </button>
+				<button onClick={() => this.changeCount(-1)}> - </button>
 				<span>{this.state.count}</span>
-				<button onClick={() => this.changeCount(1) }> + </button>
+				<button onClick={() => this.changeCount(1)}> + </button>
 			</div>
 		);
 	}
 
 	changeCount(amount) {
-		this.setState({ count: this.state.count + amount })
-//take current count in our state and override it with the new count that we just calculated
-
+		//pass in first function that will return a new state
+		this.setState((prevState) => {
+			return { count: prevState.count + amount };
+		});
+		//take current count in our state and override it with the new count that we just calculated
 	}
-
 }
