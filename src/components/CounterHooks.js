@@ -6,7 +6,7 @@ import { ThemeContext } from '../App';
 //could just pass props but with object deconstructing we pass the initialCount
 export default function CounterHooks({ initialCount }) {
 	const [count, setCount] = useState(initialCount);
-	const style  = useContext(ThemeContext)
+	const style  = useContext(ThemeContext);
 	return (
 		<div>
 			<button style = {style}

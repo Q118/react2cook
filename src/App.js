@@ -11,7 +11,7 @@ export const ThemeContext = React.createContext();
 
 
 function App() {
-	const [theme, setTheme] = useState("purple")
+	const [theme, setTheme] = useState("yellow")
 	return (
 		<ThemeContext.Provider value={ {backgroundColor: theme} }>
 		Counter
