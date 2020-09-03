@@ -28,6 +28,5 @@ export default class Counter extends Component {
 		this.setState((prevState) => {
 			return { count: prevState.count + amount };
 		});
-		//take current count in our state and override it with the new count that we just calculated
 	}
 }
