@@ -1,6 +1,6 @@
 /** @format */
 
-import React from "react";
+import React, { useState } from "react";
 import Counter from "./components/Counter";
 import CounterHooks from "./components/CounterHooks";
 
@@ -11,12 +11,16 @@ export const ThemeContext = React.createContext();
 
 
 function App() {
+	const [theme, setTheme] = useState("purple")
 	return (
 		<ThemeContext.Provider value={ {backgroundColor: theme} }>
 		Counter
 		<Counter initialCount={0} />
 		Counter Hooks
 		<CounterHooks initialCount={3} />
+		<button onClick= {() => setTheme(prevTheme => {
+			return prevTheme === 'purple' ? 'yellow' : 'purple'
+		})}>Toggle Theme</button>
 		</ThemeContext.Provider>
 	);
 }
