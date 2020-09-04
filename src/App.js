@@ -20,7 +20,7 @@ const sampleRecipes = [
 		name: "Plain Tofu",
 		servings: 3,
 		cookTime: "1:45",
-		instructions: "1. Put salt on tofu \n 2. Put tofu in oven \n 3. Eat tofu", 
+		instructions: "1. Put salt on tofu\n 2. Put tofu in oven\n 3. Eat tofu", 
 		ingredients: [
 			{
 				id: 1,
@@ -39,7 +39,7 @@ const sampleRecipes = [
 		name: "Plain Salmon",
 		servings: 5,
 		cookTime: "0:45",
-		instructions: "1. Put garlic on salmon \n 2. Put salmon in oven \n 3. Eat salmon", 
+		instructions: "1. Put garlic on salmon\n 2. Put salmon in oven\n 3. Eat salmon", 
 		ingredients: [
 			{
 				id: 1,
