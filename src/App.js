@@ -7,9 +7,29 @@ function App() {
 	
 	return (
 
-		<RecipeList />
+		<RecipeList recipes={sampleRecipes}/>
 
 	);
 }
+
+
+const sampleRecipes = [ 
+	{
+		id: 1,
+		name: "Plain Tofu",
+		servings: 3,
+		cookTime: "1:45",
+		instructions: "1. Put salt on tofu \n 2. Put tofu in oven \n 3. Eat tofu" 
+	},
+	{
+		id: 2,
+		name: "Plain Salmon",
+		servings: 5,
+		cookTime: "0:45",
+		instructions: "1. Put garlic on salmon \n 2. Put salmon in oven \n 3. Eat salmon" 
+	},
+	
+]
+
 
 export default App;
