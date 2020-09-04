@@ -2,7 +2,7 @@
 @import 'font.css';
 @import 'buttons.css';
 @import 'recipe-list.css';
-
+@import 'recipe.css'
 
 
 *, *::before, *::after {
@@ -17,4 +17,8 @@ html {
 body {
     padding: 0;
     margin: 0;
+}
+
+.mr-1 {
+    margin-right: 5px;
 }
