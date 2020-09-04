@@ -1,7 +1,8 @@
 /** @format */
-
 import React from "react";
 import RecipeList from './components/RecipeList';
+import './css/app.css'
+
 
 function App() {
 	
