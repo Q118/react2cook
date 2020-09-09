@@ -8,6 +8,14 @@ const RecipeContext = React.createContext();
 
 function App() {
 	const [recipes, setRecipes] = useState(sampleRecipes)
+
+	const RecipeContextValue = {
+		//when key will be the same as value, in react can just specify once
+			//wud have been "handleRecipeAdd: handleRecipeAdd"
+		handleRecipeAdd,
+		handleRecipeDelete
+	}
+
 	function handleRecipeAdd() {
 		const newRecipe = {
 			id: uuidv4(),
@@ -33,11 +41,14 @@ function App() {
 	}
 
 	return (
-		<RecipeList 
-		recipes={recipes} 
-		handleRecipeAdd={handleRecipeAdd}
-		handleRecipeDelete={handleRecipeDelete} 
-		/>
+		<RecipeContext.Provider value={RecipeContextValue}>
+			<RecipeList 
+			recipes={recipes} 
+			handleRecipeAdd={handleRecipeAdd}
+			handleRecipeDelete={handleRecipeDelete} 
+			/>
+		</RecipeContext.Provider>
+	
 	);
 }
 
