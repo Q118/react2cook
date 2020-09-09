@@ -15,7 +15,7 @@ export default function RecipeList({ recipes }) {
 			<div>
 				{recipes.map((recipe) => {
 					return <Recipe 
-							 key={recipe.id} {...recipe} />;
+							 key={recipe.id} {...recipe} />
 				})}
 			</div>
 			<div className="recipe-list__add-recipe-btn-container">

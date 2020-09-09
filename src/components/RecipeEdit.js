@@ -6,6 +6,10 @@ export default function RecipeEdit() {
             <div>
                 <button>&times;</button>
             </div>
+            <div>
+                <label htmlFor="name">Name</label>
+                <input type="name" name="name" id="name" />
+            </div>
         </div>
     )
 }
