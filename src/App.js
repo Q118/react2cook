@@ -1,13 +1,25 @@
 /** @format */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import RecipeList from "./components/RecipeList";
 import "./css/app.css";
 import { v4 as uuidv4 } from "uuid";
 
 export const RecipeContext = React.createContext();
+const LOCAL_STORAGE_KEY = 'cookingWithReact.recipes';
+
 
 function App() {
 	const [recipes, setRecipes] = useState(sampleRecipes)
+
+	//takes a function to be called every single time component is re-rendered
+	//pass it secondly an array of all the different dependencies
+			//that you want it to depend on
+	//if its empty- will happen on page reload
+		//passing in recipes, saying every time the recipes change...
+	useEffect(() => {
+		
+		localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(recipes))
+	}, [recipes])
 
 	const RecipeContextValue = {
 		//when key will be the same as value, in react can just specify once
