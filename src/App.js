@@ -23,10 +23,18 @@ function App() {
 		setRecipes([...recipes, newRecipe]);
 	}
 
+	function handleRecipeDelete(id) {
+		//want to filter it to get all the recipes that don't have that id
+		//and set those to our current recipes
+		//essentially to remove the specific recipe
+		setRecipes(recipes.filter(recipe => recipe.id !== id))
+	}
+
 	return (
 		<RecipeList 
 		recipes={recipes} 
-		handleRecipeAdd={handleRecipeAdd} 
+		handleRecipeAdd={handleRecipeAdd}
+		handleRecipeDelete={handleRecipeDelete} 
 		/>
 	);
 }
