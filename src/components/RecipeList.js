@@ -1,10 +1,13 @@
 /** @format */
 
-import React from "react";
+import React, { useContext } from "react";
 import Recipe from "./Recipe";
+import { RecipeContext } from '../App';
 
-export default function RecipeList(props) {
-	const { recipes, handleRecipeAdd, handleRecipeDelete } = props;
+export default function RecipeList({ recipes }) {
+	const { handleRecipeAdd } = useContext(RecipeContext)
+
+
 	//loop through the recipes, return a recipe
 	//... = take all the individual key value pairs of recipe and put them in as individual things
 	return (
@@ -12,9 +15,7 @@ export default function RecipeList(props) {
 			<div>
 				{recipes.map((recipe) => {
 					return <Recipe 
-							 key={recipe.id}
-							 handleRecipeDelete={handleRecipeDelete}
-					 		 {...recipe} />;
+							 key={recipe.id} {...recipe} />;
 				})}
 			</div>
 			<div className="recipe-list__add-recipe-btn-container">
