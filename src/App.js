@@ -11,15 +11,25 @@ const LOCAL_STORAGE_KEY = 'cookingWithReact.recipes';
 function App() {
 	const [recipes, setRecipes] = useState(sampleRecipes)
 
-	//takes a function to be called every single time component is re-rendered
+
+
+//load 
+useEffect(() => {
+	const recipeJSON = localStorage.getItem(LOCAL_STORAGE_KEY)
+	//check if it exists yet
+	//if its not null, there is info there, so set recipes to that info
+	if (recipeJSON != null) setRecipes(JSON.parse(recipeJSON))
+
+}, [])
+
+	//use effect takes a function to be called every single time component is re-rendered
 	//pass it secondly an array of all the different dependencies
 			//that you want it to depend on
-	//if its empty- will happen on page reload
+	//if its empty- will happen on page load only
 		//passing in recipes, saying every time the recipes change...
-	useEffect(() => {
-		
-		localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(recipes))
-	}, [recipes])
+		useEffect(() => {
+			localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(recipes))
+		}, [recipes])
 
 	const RecipeContextValue = {
 		//when key will be the same as value, in react can just specify once
