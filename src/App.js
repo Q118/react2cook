@@ -4,6 +4,8 @@ import RecipeList from "./components/RecipeList";
 import "./css/app.css";
 import { v4 as uuidv4 } from "uuid";
 
+const RecipeContext = React.createContext();
+
 function App() {
 	const [recipes, setRecipes] = useState(sampleRecipes)
 	function handleRecipeAdd() {
