@@ -18,6 +18,15 @@ export default function RecipeEdit() {
             </div>
             <br />
             <label>Ingredients</label>
+            <div>
+                <div>Name</div>
+                <div>Amount</div>
+                <div></div>
+                {/* Ingredient Components */}
+            </div>
+            <div>
+                <button>Add Ingredient</button>
+            </div>
         </div>
     )
 }
