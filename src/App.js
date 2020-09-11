@@ -19,7 +19,6 @@ function App() {
 	//for each recipe, we just want to compare the recipe ID to the ID of our selected recipe 
 	const selectedRecipe = recipes.find(recipe => recipe.id === selectedRecipeId)
 
-console.log(selectedRecipe);
 
 //load 
 useEffect(() => {
@@ -78,7 +77,10 @@ function handleRecipeSelect(id) {
 	return (
 		<RecipeContext.Provider value={RecipeContextValue}>
 			<RecipeList recipes={recipes} />
-			<RecipeEdit />
+			{selectedRecipe && <RecipeEdit recipe={selectedRecipe}/>}
+			{/* This line above is saying, is there a selectedRecipe? if true then
+			its going to evaluate the next thing after the "&&", then it will return it
+			if the selectedRecipe is undefined it like short-circuits and doesn't return the second part */}
 		</RecipeContext.Provider>
 	
 	);
