@@ -38,12 +38,14 @@ useEffect(() => {
 			localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(recipes))
 		}, [recipes])
 
+		//things in here can bve accessed inside our ENTIRE application
 	const RecipeContextValue = {
 		//when key will be the same as value, in react can just specify once
 			//wud have been "handleRecipeAdd: handleRecipeAdd"
 		handleRecipeAdd,
 		handleRecipeDelete,
-		handleRecipeSelect
+		handleRecipeSelect,
+		handleRecipeChange
 	}
 
 function handleRecipeSelect(id) {

@@ -1,9 +1,24 @@
 /** @format */
 
-import React from "react";
+import React, { useContext } from "react";
 import RecipeIngredientEdit from "./RecipeIngredientEdit";
+import { RecipeContext } from '../App';
 
 export default function RecipeEdit({ recipe }) {
+
+	const { handleRecipeChange } =  useContext(RecipeContext)
+
+	//helper function for all the inputs in the edit
+	//will pass in the changes we want to make
+	function handleChange(changes) {
+		//here we are overriding the name and recipe with the name from changes and 
+		//we want to pass this to the handle recipe change function
+		handleRecipeChange(recipe.id, { ...recipe, ...changes })
+
+	}
+
+
+
 	return (
 		<div className="recipe-edit">
 			<div className="recipe-edit__remove-button-container">
@@ -17,7 +32,8 @@ export default function RecipeEdit({ recipe }) {
 					type="name"
 					name="name"
                     id="name"
-                    value={recipe.name}
+					value={recipe.name}
+					onInput={e => handleChange({ name: e.target.value })}
 					className="recipe-edit__input"
 				/>
 				<label htmlFor="cookTime" className="recipe-edit__label">
@@ -27,7 +43,8 @@ export default function RecipeEdit({ recipe }) {
 					type="name"
 					name="cookTime"
                     id="cookTime"
-                    value={recipe.cookTime}
+					value={recipe.cookTime}
+					onInput={e => handleChange({ cookTime: e.target.value })}
 					className="recipe-edit__input"
 				/>
 				<label htmlFor="servings" className="recipe-edit__label">
@@ -38,7 +55,8 @@ export default function RecipeEdit({ recipe }) {
 					min="1"
 					name="servings"
                     id="servings"
-                    value={recipe.servings}
+					value={recipe.servings}
+					onInput={e => handleChange({ servings: parseInt(e.target.value) || "" })}
 					className="recipe-edit__input"
 				/>
 				<label htmlFor="instructions" className="recipe-edit__label">
