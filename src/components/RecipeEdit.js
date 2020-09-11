@@ -56,7 +56,7 @@ export default function RecipeEdit() {
 				<RecipeIngredientEdit />
 				<RecipeIngredientEdit />
 			</div>
-			<div className="recipe-list__add-ingredient-btn-container">
+			<div className="recipe-edit__add-ingredient-btn-container">
 				<button className="btn btn--primary">Add Ingredient</button>
 			</div>
 		</div>
