@@ -10,9 +10,16 @@ const LOCAL_STORAGE_KEY = 'cookingWithReact.recipes';
 
 
 function App() {
+	//state to store the selected recipe
+	const[selectedRecipeId, setSelectedRecipeId] = useState()
+	
 	const [recipes, setRecipes] = useState(sampleRecipes)
 
+	//variable equal to finding out recipe from our recipes list
+	//for each recipe, we just want to compare the recipe ID to the ID of our selected recipe 
+	const selectedRecipe = recipes.find(recipe => recipe.id === selectedRecipeId)
 
+console.log(selectedRecipe);
 
 //load 
 useEffect(() => {
@@ -36,8 +43,13 @@ useEffect(() => {
 		//when key will be the same as value, in react can just specify once
 			//wud have been "handleRecipeAdd: handleRecipeAdd"
 		handleRecipeAdd,
-		handleRecipeDelete
+		handleRecipeDelete,
+		handleRecipeSelect
 	}
+
+function handleRecipeSelect(id) {
+	setSelectedRecipeId(id)
+}
 
 	function handleRecipeAdd() {
 		const newRecipe = {
