@@ -67,6 +67,23 @@ function handleRecipeSelect(id) {
 		setRecipes([...recipes, newRecipe]);
 	}
 
+	//function to allow us to change a recipe
+	//takes in id and new recipe to replace the old recipe with
+	function handleRecipeChange(id, recipe) {
+		//set up variable to = all the current recipes inside the array
+		//we use copy so that it doesn't change the state of our original array
+		const newRecipes = [...recipes]
+
+		//get the index of whichever recipe that has the id of the one getting passed in
+		const index = newRecipes.findIndex(r => r.id === id)
+
+		//this line will replace old recipe with new one
+		newRecipes[index] = recipe
+
+		setRecipes(newRecipes)
+
+	}
+
 	function handleRecipeDelete(id) {
 		//want to filter it to get all the recipes that don't have that id
 		//and set those to our current recipes
