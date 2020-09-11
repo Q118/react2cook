@@ -48,16 +48,16 @@ export default function RecipeEdit() {
                 </textarea>
 			</div>
 			<br />
-			<label>Ingredients</label>
-			<div>
+			<label className="recipe-edit__label">Ingredients</label>
+			<div className="recipe-edit__ingredient-grid">
 				<div>Name</div>
 				<div>Amount</div>
 				<div></div>
 				<RecipeIngredientEdit />
 				<RecipeIngredientEdit />
 			</div>
-			<div>
-				<button>Add Ingredient</button>
+			<div className="recipe-list__add-ingredient-btn-container">
+				<button className="btn btn--primary">Add Ingredient</button>
 			</div>
 		</div>
 	);
