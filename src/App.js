@@ -80,7 +80,8 @@ function handleRecipeSelect(id) {
 			{selectedRecipe && <RecipeEdit recipe={selectedRecipe}/>}
 			{/* This line above is saying, is there a selectedRecipe? if true then
 			its going to evaluate the next thing after the "&&", then it will return it
-			if the selectedRecipe is undefined it like short-circuits and doesn't return the second part */}
+			if the selectedRecipe is undefined it like short-circuits and doesn't return the second part
+			its the same as doing a turnery and the thing after the : wud be null */}
 		</RecipeContext.Provider>
 	
 	);
