@@ -96,7 +96,7 @@ function handleRecipeSelect(id) {
 	return (
 		<RecipeContext.Provider value={RecipeContextValue}>
 			<RecipeList recipes={recipes} />
-			{selectedRecipe && <RecipeEdit recipe={selectedRecipe}/>}
+			{selectedRecipe && <RecipeEdit recipe={selectedRecipe} />}
 			{/* This line above is saying, is there a selectedRecipe? if true then
 			its going to evaluate the next thing after the "&&", then it will return it
 			if the selectedRecipe is undefined it like short-circuits and doesn't return the second part
