@@ -3,6 +3,7 @@
 import React, { useContext } from "react";
 import RecipeIngredientEdit from "./RecipeIngredientEdit";
 import { RecipeContext } from '../App';
+import { v4 as uuidv4 } from "uuid";
 
 export default function RecipeEdit({ recipe }) {
 
@@ -26,8 +27,19 @@ export default function RecipeEdit({ recipe }) {
 		handleChange({ ingredients: newIngredients })
 		//in this function, we are just taking our current array of ingredients and swapping out
 		//the ingredient with tis ID with the ingredient were passing into the function
-		//and then were making sure that we propagate that up by calling handlechange 
+		//and then were making sure that we propagate that up by calling handle change 
 		//which calls our handle recipe change function to make sure our state is set for us
+	}
+
+
+	function handleIngredientAdd() {
+		const newIngredient = {
+			id: uuidv4(),
+			name:  "",
+			amount: ""
+		}
+		//copy of the array of all of our ingredients
+		handleChange({ ingredients: [...recipe.ingredients, newIngredient] })
 	}
 
 
@@ -104,7 +116,12 @@ export default function RecipeEdit({ recipe }) {
                 ))}
 			</div>
 			<div className="recipe-edit__add-ingredient-btn-container">
-				<button className="btn btn--primary">Add Ingredient</button>
+				<button 
+					className="btn btn--primary"
+					onClick={() => handleIngredientAdd()}
+				>
+					Add Ingredient
+				</button>
 			</div>
 		</div>
 	);
