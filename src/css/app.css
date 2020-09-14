@@ -5,6 +5,7 @@
 @import 'ingredient-list.css';
 @import 'recipe.css';
 @import 'recipe-edit.css';
+@import 'navbar.css';
 
 
 *, *::before, *::after {
