@@ -42,6 +42,13 @@ export default function RecipeEdit({ recipe }) {
 		handleChange({ ingredients: [...recipe.ingredients, newIngredient] })
 	}
 
+	function handleIngredientDelete(id) {
+		//make it so we are only showing the ingredients that do not have the id of the one that is clicked X
+		handleChange({
+			ingredients: recipe.ingredients.filter(i => i.id !== id)
+		})
+	}
+
 
 
 	return (
@@ -111,6 +118,7 @@ export default function RecipeEdit({ recipe }) {
                     <RecipeIngredientEdit 
 						key={ingredient.id} 
 						handleIngredientChange={handleIngredientChange}
+						handleIngredientDelete={handleIngredientDelete}
                         ingredient={ingredient} 
                     />
                 ))}
