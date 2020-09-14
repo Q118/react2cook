@@ -6,51 +6,50 @@ import { v4 as uuidv4 } from "uuid";
 import RecipeEdit from "./components/RecipeEdit";
 
 export const RecipeContext = React.createContext();
-const LOCAL_STORAGE_KEY = 'cookingWithReact.recipes';
-
+const LOCAL_STORAGE_KEY = "cookingWithReact.recipes";
 
 function App() {
 	//state to store the selected recipe
-	const[selectedRecipeId, setSelectedRecipeId] = useState()
-	
-	const [recipes, setRecipes] = useState(sampleRecipes)
+	const [selectedRecipeId, setSelectedRecipeId] = useState();
+
+	const [recipes, setRecipes] = useState(sampleRecipes);
 
 	//variable equal to finding out recipe from our recipes list
-	//for each recipe, we just want to compare the recipe ID to the ID of our selected recipe 
-	const selectedRecipe = recipes.find(recipe => recipe.id === selectedRecipeId)
+	//for each recipe, we just want to compare the recipe ID to the ID of our selected recipe
+	const selectedRecipe = recipes.find(
+		(recipe) => recipe.id === selectedRecipeId
+	);
 
-
-//load 
-useEffect(() => {
-	const recipeJSON = localStorage.getItem(LOCAL_STORAGE_KEY)
-	//check if it exists yet
-	//if its not null, there is info there, so set recipes to that info
-	if (recipeJSON != null) setRecipes(JSON.parse(recipeJSON))
-
-}, [])
+	//load
+	useEffect(() => {
+		const recipeJSON = localStorage.getItem(LOCAL_STORAGE_KEY);
+		//check if it exists yet
+		//if its not null, there is info there, so set recipes to that info
+		if (recipeJSON != null) setRecipes(JSON.parse(recipeJSON));
+	}, []);
 
 	//use effect takes a function to be called every single time component is re-rendered
 	//pass it secondly an array of all the different dependencies
-			//that you want it to depend on
+	//that you want it to depend on
 	//if its empty- will happen on page load only
-		//passing in recipes, saying every time the recipes change...
-		useEffect(() => {
-			localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(recipes))
-		}, [recipes])
+	//passing in recipes, saying every time the recipes change...
+	useEffect(() => {
+		localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(recipes));
+	}, [recipes]);
 
-		//things in here can bve accessed inside our ENTIRE application
+	//things in here can bve accessed inside our ENTIRE application
 	const RecipeContextValue = {
 		//when key will be the same as value, in react can just specify once
-			//wud have been "handleRecipeAdd: handleRecipeAdd"
+		//wud have been "handleRecipeAdd: handleRecipeAdd"
 		handleRecipeAdd,
 		handleRecipeDelete,
 		handleRecipeSelect,
-		handleRecipeChange
-	}
+		handleRecipeChange,
+	};
 
-function handleRecipeSelect(id) {
-	setSelectedRecipeId(id)
-}
+	function handleRecipeSelect(id) {
+		setSelectedRecipeId(id);
+	}
 
 	function handleRecipeAdd() {
 		const newRecipe = {
@@ -59,14 +58,11 @@ function handleRecipeSelect(id) {
 			servings: 1,
 			cookTime: "",
 			instructions: "",
-			ingredients: [
-				{ id: uuidv4(), name: "", amount: "" }
-			]
-		}
-		
+			ingredients: [{ id: uuidv4(), name: "", amount: "" }],
+		};
 
 		//make it so the new recipe automatically populates on the right side
-		setSelectedRecipeId(newRecipe.id)
+		setSelectedRecipeId(newRecipe.id);
 
 		//get all the recipes that are in our array right now
 		//and add new recipe to end of it, create new array with it
@@ -78,23 +74,28 @@ function handleRecipeSelect(id) {
 	function handleRecipeChange(id, recipe) {
 		//set up variable to = all the current recipes inside the array
 		//we use copy so that it doesn't change the state of our original array
-		const newRecipes = [...recipes]
+		const newRecipes = [...recipes];
 
 		//get the index of whichever recipe that has the id of the one getting passed in
-		const index = newRecipes.findIndex(r => r.id === id)
+		const index = newRecipes.findIndex((r) => r.id === id);
 
 		//this line will replace old recipe with new one
-		newRecipes[index] = recipe
+		newRecipes[index] = recipe;
 
-		setRecipes(newRecipes)
-
+		setRecipes(newRecipes);
 	}
 
 	function handleRecipeDelete(id) {
+		//this line below-clear out the selected recipe id when we dont actually have a recipe that corresponds with that ID
+		if (selectedRecipeId !== null && selectedRecipeId === id) {
+			setSelectedRecipeId(undefined);
+			//explicit in saying that we no longer have a selected recipe
+		}
+
 		//want to filter it to get all the recipes that don't have that id
 		//and set those to our current recipes
 		//essentially to remove the specific recipe
-		setRecipes(recipes.filter(recipe => recipe.id !== id))
+		setRecipes(recipes.filter((recipe) => recipe.id !== id));
 	}
 
 	return (
@@ -106,7 +107,6 @@ function handleRecipeSelect(id) {
 			if the selectedRecipe is undefined it like short-circuits and doesn't return the second part
 			its the same as doing a turnery and the thing after the : wud be null */}
 		</RecipeContext.Provider>
-	
 	);
 }
 
