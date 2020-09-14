@@ -136,7 +136,7 @@ const sampleRecipes = [
 		servings: 5,
 		cookTime: "0:45",
 		instructions:
-			"1. Put garlic on salmon\n 2. Put salmon in oven\n 3. Eat salmon",
+			"1. Put garlic on salmon\n2. Put salmon in oven\n3. Eat salmon",
 		ingredients: [
 			{
 				id: 1,
