@@ -6,7 +6,7 @@ import { RecipeContext } from '../App';
 
 export default function RecipeEdit({ recipe }) {
 
-	const { handleRecipeChange } =  useContext(RecipeContext)
+	const { handleRecipeChange, handleRecipeSelect } =  useContext(RecipeContext)
 
 	//helper function for all the inputs in the edit
 	//will pass in the changes we want to make
@@ -35,7 +35,13 @@ export default function RecipeEdit({ recipe }) {
 	return (
 		<div className="recipe-edit">
 			<div className="recipe-edit__remove-button-container">
-				<button className="btn recipe-edit__remove-button">&times;</button>
+				<button 
+					className="btn recipe-edit__remove-button"
+					// pass in undefined bc want to select nothing
+					onClick={() => handleRecipeSelect(undefined)}
+				>
+					&times;
+				</button>
 			</div>
 			<div className="recipe-edit__details-grid">
 				<label htmlFor="name" className="recipe-edit__label">
