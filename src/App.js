@@ -64,6 +64,10 @@ function handleRecipeSelect(id) {
 			]
 		}
 		
+
+		//make it so the new recipe automatically populates on the right side
+		setSelectedRecipeId(newRecipe.id)
+
 		//get all the recipes that are in our array right now
 		//and add new recipe to end of it, create new array with it
 		setRecipes([...recipes, newRecipe]);
