@@ -3,6 +3,9 @@
 import React, { useContext } from "react";
 import IngredientList from "./IngredientList";
 import { RecipeContext } from "../App";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEdit } from '@fortawesome/free-solid-svg-icons'
+
 
 export default function Recipe(props) {
 	const { handleRecipeDelete, handleRecipeSelect } = useContext(RecipeContext);
@@ -17,7 +20,7 @@ export default function Recipe(props) {
 					<button
 						className="btn btn--primary mr-1"
 						onClick={() => handleRecipeSelect(id)}>
-						long 
+						<FontAwesomeIcon icon={faEdit} />
 					</button>
 					<button
 						className="btn btn--danger"
