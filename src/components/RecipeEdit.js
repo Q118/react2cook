@@ -53,7 +53,7 @@ export default function RecipeEdit({ recipe }) {
 					className="btn recipe-edit__remove-button"
 					// pass in undefined bc want to select nothing
 					onClick={() => handleRecipeSelect(undefined)}>
-					&times;
+					Done.
 				</button>
 			</div>
 			<div className="recipe-edit__details-grid">

@@ -17,7 +17,7 @@ export default function Recipe(props) {
 					<button
 						className="btn btn--primary mr-1"
 						onClick={() => handleRecipeSelect(id)}>
-						Edit
+						long 
 					</button>
 					<button
 						className="btn btn--danger"

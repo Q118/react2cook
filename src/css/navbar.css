@@ -2,8 +2,7 @@
     background-color:  hsl(200, 100%, 35%);
     height: 120px;
     display: grid;
-    grid-template-columns: repeat(3, auto);
-    row-gap: 5px;
-    column-gap: 40px;
+    grid-template-columns: repeat(4, auto);
+    column-gap: 200px;
     justify-content: flex-start;
 }
