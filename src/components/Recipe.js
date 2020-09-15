@@ -5,6 +5,8 @@ import IngredientList from "./IngredientList";
 import { RecipeContext } from "../App";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEdit } from '@fortawesome/free-solid-svg-icons'
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
+import Tooltip from 'react-bootstrap/Tooltip'
 
 
 export default function Recipe(props) {
@@ -17,11 +19,21 @@ export default function Recipe(props) {
 			<div className="recipe__header">
 				<h3 className="recipe__title">{name}</h3>
 				<div>
+					<OverlayTrigger 
+					    key="left"
+						placement= "left"
+						overlay={
+						  <Tooltip id={`tooltip-edit`}>
+							<strong>Edit</strong>
+						  </Tooltip>
+						}
+					>
 					<button
 						className="btn btn--primary mr-1"
 						onClick={() => handleRecipeSelect(id)}>
 						<FontAwesomeIcon icon={faEdit} />
 					</button>
+					</OverlayTrigger>
 					<button
 						className="btn btn--danger"
 						onClick={() => handleRecipeDelete(id)}>
