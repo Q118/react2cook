@@ -28,6 +28,15 @@
     background-color: hsl(0, 100%, 35%)
 }
 
+.search--button {
+    background-color: aquamarine;
+    width: inherit;
+}
+
+.search--button__container  {
+    padding: 10px;
+}
+
 .edit--tooltip {
     background-color: rgb(187, 190, 16);
     color: white;
@@ -39,9 +48,6 @@
     padding: 8px;
 }
 
-.search--button {
-    background-color: aquamarine;
-}
 
 .delete--tooltip {
     background-color: rgb(199, 136, 194);
