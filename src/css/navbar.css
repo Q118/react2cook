@@ -1,8 +1,16 @@
 .my-nav {
     background-color:  hsl(200, 100%, 35%);
-    height: 120px;
+    height: 100px;
     display: grid;
     grid-template-columns: repeat(4, auto);
-    column-gap: 200px;
+    column-gap: 250px;
     justify-content: flex-start;
+    align-items: center;
+    color: white;
+}
+
+.cook-image {
+    padding-left: 10px;
+    padding-right: 20px;
+    color: white;
 }

@@ -4,7 +4,7 @@ import React, { useContext } from "react";
 import IngredientList from "./IngredientList";
 import { RecipeContext } from "../App";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEdit } from '@fortawesome/free-solid-svg-icons'
+import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Tooltip from 'react-bootstrap/Tooltip'
 
@@ -21,10 +21,13 @@ export default function Recipe(props) {
 				<div>
 					<OverlayTrigger 
 					    key="left"
-						placement= "left"
+						placement="left"
 						overlay={
-						  <Tooltip id={`tooltip-edit`}>
-							<strong>Edit</strong>
+						  <Tooltip 
+							  id="tooltip-left"
+							  className="edit--tooltip"
+						  >
+							<strong>Click to Edit</strong>
 						  </Tooltip>
 						}
 					>
@@ -34,11 +37,24 @@ export default function Recipe(props) {
 						<FontAwesomeIcon icon={faEdit} />
 					</button>
 					</OverlayTrigger>
+					<OverlayTrigger 
+					    key="bottom"
+						placement="bottom"
+						overlay={
+						  <Tooltip 
+							  id="tooltip-bottom"
+							  className="delete--tooltip"
+						  >
+							<strong>Click to Delete</strong>
+						  </Tooltip>
+						}
+					>
 					<button
 						className="btn btn--danger"
 						onClick={() => handleRecipeDelete(id)}>
-						Delete
+						<FontAwesomeIcon icon={faTrash} />
 					</button>
+					</OverlayTrigger>
 				</div>
 			</div>
 			<div className="recipe__row">

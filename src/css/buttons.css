@@ -27,3 +27,18 @@
 .btn--danger:hover {
     background-color: hsl(0, 100%, 35%)
 }
+
+.edit--tooltip {
+    background-color: rgb(190, 123, 16);
+    background-opacity: .5;
+    color: white;
+    margin-right: 10px;
+    border-radius: 5px;
+    padding: 4px;
+    border-style: dotted;
+    font-size: 0.75em;
+}
+
+.search--button {
+    background-color: aquamarine;
+}
