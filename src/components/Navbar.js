@@ -5,7 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import Search from "./Search";
 import Cook from "../Images/Cook.png";
 
-export default function Navbar() {
+export default function Navbar({ handleSearchChange }) {
 	return (
 		<>
 			<Nav className="my-nav">
@@ -13,7 +13,7 @@ export default function Navbar() {
 					<img className="cook-image" src={Cook} alt="Cook" height="90px" />
 				</div>
 				<div>
-					<Search />
+					<Search handleSearchChange={handleSearchChange} />
 				</div>
 				<div>My Cookbook</div>
 				<div>External Links</div>
