@@ -23,17 +23,21 @@ function App() {
 	useEffect(() => {
 		const recipeJSON = localStorage.getItem(LOCAL_STORAGE_KEY);
 		//check if it exists yet
-		//if its not null, there is info there, so set recipes to that info
 		if (recipeJSON != null) setRecipes(JSON.parse(recipeJSON));
 	}, []);
 	//use effect takes a function to be called every single time component is re-rendered
 	//pass it secondly an array of all the different dependencies
 	//that you want it to depend on
 	//if its empty- will happen on page load only
+	
+
 	//passing in recipes, saying every time the recipes change...
-	useEffect(() => {
-		localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(recipes));
-	}, [recipes]);
+		// ** this should apply to everything except the search function
+	// useEffect(() => {
+	// 	localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(recipes));
+	// }, [recipes]);
+
+
 	//things in here can bve accessed inside our ENTIRE application
 	const RecipeContextValue = {
 		//when key will be the same as value, in react can just specify once
@@ -102,6 +106,10 @@ function App() {
 		});
 		setRecipes(newList);
 	  };
+
+	//   function handleReset() {
+		
+	//   }
 
 	return (
 		<RecipeContext.Provider value={RecipeContextValue}>

@@ -22,7 +22,10 @@ export default function Search({ handleSearchChange }) {
                   onChange={e => handleSearchChange(e)}
                 />
                 <div className="search--button__container">
-				  <Button variant="outline-success" className="search--button">
+          <Button 
+            variant="outline-success" 
+            className="search--button"
+          >
 					<FontAwesomeIcon icon={faSearch} />
 				  </Button>
                 </div>
