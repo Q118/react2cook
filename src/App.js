@@ -19,7 +19,8 @@ function App() {
 	const selectedRecipe = recipes.find(
 		(recipe) => recipe.id === selectedRecipeId
 	);
-	//load
+
+	//on load
 	useEffect(() => {
 		const recipeJSON = localStorage.getItem(LOCAL_STORAGE_KEY);
 		//check if it exists yet
@@ -33,9 +34,17 @@ function App() {
 
 	//passing in recipes, saying every time the recipes change...
 		// ** this should apply to everything except the search function
-	// useEffect(() => {
-	// 	localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(recipes));
-	// }, [recipes]);
+		useEffect(() => {
+			localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(recipes));
+			let x;
+		for(x=0; x <= recipes.length; x ++){
+			console.log(recipes[x].name);
+		} 
+			
+			
+
+
+		}, [recipes[1].name]);
 
 
 	//things in here can bve accessed inside our ENTIRE application
@@ -104,7 +113,7 @@ function App() {
 		  let values = Object.values(item).join("").toLowerCase();
 		  return values.indexOf(filter.toLowerCase()) !== -1;
 		});
-		setRecipes(newList);
+		setRecipes([...newList]);
 	  };
 
 	//   function handleReset() {
