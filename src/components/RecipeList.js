@@ -1,18 +1,26 @@
 /** @format */
 
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import Recipe from "./Recipe";
 import { RecipeContext } from "../App";
 
+
 export default function RecipeList({ recipes }) {
 	const { handleRecipeAdd } = useContext(RecipeContext);
+	const [searchTerm, setSearchTerm] = React.useState("");
+	const [searchResults, setSearchResults] = useState([]);
 
-	//loop through the recipes, return a recipe
-	//... = take all the individual key value pairs of recipe and put them in as individual things
+	useEffect(() => {
+		const results = recipes.filter(recipe =>
+		  recipe.toString().toLowerCase().includes(searchTerm)
+		);
+		setSearchResults(results);
+	  }, [searchTerm]);
+
 	return (
 		<div className="recipe-list">
 			<div>
-				{recipes.map((recipe) => {
+				{searchResults.map((recipe) => {
 					return <Recipe key={recipe.id} {...recipe} />;
 				})}
 			</div>

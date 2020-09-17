@@ -1,11 +1,11 @@
 /** @format */
 import React, { useState, useEffect } from "react";
+import sampleRecipes from "./utils/sampleRecipes.json"
 import RecipeList from "./components/RecipeList";
 import Navbar from "./components/Navbar";
 import "./css/app.css";
 import { v4 as uuidv4 } from "uuid";
 import RecipeEdit from "./components/RecipeEdit";
-
 
 export const RecipeContext = React.createContext();
 const LOCAL_STORAGE_KEY = "cookingWithReact.recipes";
@@ -14,11 +14,17 @@ function App() {
 	//state to store the selected recipe
 	const [selectedRecipeId, setSelectedRecipeId] = useState();
 	const [recipes, setRecipes] = useState(sampleRecipes);
+
+	const [searchTerm, setSearchTerm] = useState("");  
+	const [searchResults, setSearchResults] = useState([]);
+
 	//variable equal to finding out recipe from our recipes list
 	//for each recipe, we just want to compare the recipe ID to the ID of our selected recipe
 	const selectedRecipe = recipes.find(
 		(recipe) => recipe.id === selectedRecipeId
 	);
+
+
 
 	//on load
 	useEffect(() => {
@@ -27,36 +33,14 @@ function App() {
 		if (recipeJSON != null) setRecipes(JSON.parse(recipeJSON));
 	}, []);
 	//use effect takes a function to be called every single time component is re-rendered
-	//pass it secondly an array of all the different dependencies
-	//that you want it to depend on
-	//if its empty- will happen on page load only
-	
+	//if second array is empty- will happen on page load only
 
-	//passing in recipes, saying every time the recipes change...
-		// ** this should apply to everything except the search function
-		useEffect(() => {
-			localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(recipes));
-			let x;
-		for(x=0; x <= recipes.length; x ++){
-			console.log(recipes[x].name);
-		} 
-			
-			
+	//passing in recipes, saving every time the recipes change...
+	// ** this should apply to everything except the search function
+	useEffect(() => {
+		localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(recipes));
+	}, [recipes]);
 
-
-		}, [recipes[1].name]);
-
-
-	//things in here can bve accessed inside our ENTIRE application
-	const RecipeContextValue = {
-		//when key will be the same as value, in react can just specify once
-		//wud have been "handleRecipeAdd: handleRecipeAdd"
-		handleRecipeAdd,
-		handleRecipeDelete,
-		handleRecipeSelect,
-		handleRecipeChange,
-		handleSearchChange
-	};
 	function handleRecipeSelect(id) {
 		setSelectedRecipeId(id);
 	}
@@ -104,25 +88,43 @@ function App() {
 		setRecipes(recipes.filter((recipe) => recipe.id !== id));
 	}
 
-	function handleSearchChange(event){
-		const filter = event.target.value;
-		const filteredList = [...recipes];
+	// function handleSearchChange(event) {
 		
-		const newList = filteredList.filter((item) => {
-		  // merge data together, then see if user input is anywhere inside
-		  let values = Object.values(item).join("").toLowerCase();
-		  return values.indexOf(filter.toLowerCase()) !== -1;
-		});
-		setRecipes([...newList]);
+	// 	const filter = event.target.value;
+	// 	const filteredList = [...recipes];
+
+	// 	const newList = filteredList.filter((item) => {
+	// 		// merge data together, then see if user input is anywhere inside
+	// 		let values = Object.values(item).join("").toLowerCase();
+	// 		return values.indexOf(filter.toLowerCase()) !== -1;
+	// 	});
+		
+	// 	setRecipes(newList);
+	// }
+
+	function handleChange(event) {
+		setSearchTerm(event.target.value);
 	  };
 
 	//   function handleReset() {
-		
+
 	//   }
+
+
+		//things in here can bve accessed inside our ENTIRE application
+		const RecipeContextValue = {
+			//when key will be the same as value, in react can just specify once
+			//wud have been "handleRecipeAdd: handleRecipeAdd"
+			handleRecipeAdd,
+			handleRecipeDelete,
+			handleRecipeSelect,
+			handleRecipeChange,
+			handleChange
+		};
 
 	return (
 		<RecipeContext.Provider value={RecipeContextValue}>
-			<Navbar handleSearchChange={handleSearchChange} />
+			<Navbar handleChange={handleChange} />
 			<RecipeList recipes={recipes} />
 			{selectedRecipe && <RecipeEdit recipe={selectedRecipe} />}
 			{/* This line above is saying, is there a selectedRecipe? if true then
@@ -133,46 +135,46 @@ function App() {
 	);
 }
 
-const sampleRecipes = [
-	{
-		id: 1,
-		name: "Plain Tofu",
-		servings: 3,
-		cookTime: "1:45",
-		instructions: "1. Put salt on tofu\n2. Put tofu in oven\n3. Eat tofu",
-		ingredients: [
-			{
-				id: 1,
-				name: "tofu ",
-				amount: "2 pounds ",
-			},
-			{
-				id: 2,
-				name: "Salt ",
-				amount: "1 tbs ",
-			},
-		],
-	},
-	{
-		id: 2,
-		name: "Plain Salmon",
-		servings: 5,
-		cookTime: "0:45",
-		instructions:
-			"1. Put garlic on salmon\n2. Put salmon in oven\n3. Eat salmon",
-		ingredients: [
-			{
-				id: 1,
-				name: "salmon ",
-				amount: "3 pounds ",
-			},
-			{
-				id: 2,
-				name: "garlic ",
-				amount: "2 tbs ",
-			},
-		],
-	},
-];
+// const sampleRecipes = [
+// 	{
+// 		id: 1,
+// 		name: "Plain Tofu",
+// 		servings: 3,
+// 		cookTime: "1:45",
+// 		instructions: "1. Put salt on tofu\n2. Put tofu in oven\n3. Eat tofu",
+// 		ingredients: [
+// 			{
+// 				id: 1,
+// 				name: "tofu ",
+// 				amount: "2 pounds ",
+// 			},
+// 			{
+// 				id: 2,
+// 				name: "Salt ",
+// 				amount: "1 tbs ",
+// 			},
+// 		],
+// 	},
+// 	{
+// 		id: 2,
+// 		name: "Plain Salmon",
+// 		servings: 5,
+// 		cookTime: "0:45",
+// 		instructions:
+// 			"1. Put garlic on salmon\n2. Put salmon in oven\n3. Eat salmon",
+// 		ingredients: [
+// 			{
+// 				id: 1,
+// 				name: "salmon ",
+// 				amount: "3 pounds ",
+// 			},
+// 			{
+// 				id: 2,
+// 				name: "garlic ",
+// 				amount: "2 tbs ",
+// 			},
+// 		],
+// 	},
+// ];
 
 export default App;
