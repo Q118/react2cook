@@ -1,9 +1,14 @@
-import React from 'react'
+/** @format */
+
+import React from "react";
+import Form from "react-bootstrap/Form";
+import ResultContainer from "../components/ResultContainer";
 
 export default function SearchPage() {
-    return (
-        <div>
-            Search Page
-        </div>
-    )
+
+	return (
+		<div>
+			<ResultContainer />
+		</div>
+	);
 }

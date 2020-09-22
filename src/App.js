@@ -1,13 +1,6 @@
 /** @format */
 import React, { useState, useEffect } from "react";
-import {
-	BrowserRouter as Router,
-	Switch,
-	Route,
-	Link,
-	useRouteMatch,
-} from "react-router-dom";
-
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import sampleRecipes from "./utils/sampleRecipes.json";
 import RecipeList from "./components/RecipeList";
 import Navbar from "./components/Navbar";
@@ -23,7 +16,6 @@ function App() {
 	//state to store the selected recipe
 	const [selectedRecipeId, setSelectedRecipeId] = useState();
 	const [recipes, setRecipes] = useState(sampleRecipes);
-
 
 	//variable equal to finding out recipe from our recipes list
 	//for each recipe, we just want to compare the recipe ID to the ID of our selected recipe
@@ -93,7 +85,7 @@ function App() {
 		setRecipes(recipes.filter((recipe) => recipe.id !== id));
 	}
 
-
+	function handleChange() { console.log("hi") }
 
 	//things in here can be accessed inside our ENTIRE application
 	const RecipeContextValue = {
@@ -102,8 +94,8 @@ function App() {
 		handleRecipeAdd,
 		handleRecipeDelete,
 		handleRecipeSelect,
-		handleRecipeChange
-
+		handleRecipeChange,
+		handleChange
 	};
 
 	return (
@@ -112,13 +104,13 @@ function App() {
 				<div>
 					<Switch>
 						<Route exact path="/">
-							<Navbar  />
+							<Navbar />
 							<RecipeList recipes={recipes} />
 							{selectedRecipe && <RecipeEdit recipe={selectedRecipe} />}
 							{/* This line above is saying, is there a selectedRecipe? if true then
-					its going to evaluate the next thing after the "&&", then it will return it
-					if the selectedRecipe is undefined it like short-circuits and doesn't return the second part
-					its the same as doing a turnery and the thing after the : wud be null */}
+							its going to evaluate the next thing after the "&&", then it will return it
+							if the selectedRecipe is undefined it like short-circuits and doesn't return the second part
+							its the same as doing a turnery and the thing after the : wud be null */}
 						</Route>
 						<Route path="/search">
 							<SearchPage />
