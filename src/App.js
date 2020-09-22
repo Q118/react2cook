@@ -85,7 +85,7 @@ function App() {
 		setRecipes(recipes.filter((recipe) => recipe.id !== id));
 	}
 
-	function handleChange() { console.log("hi") }
+
 
 	//things in here can be accessed inside our ENTIRE application
 	const RecipeContextValue = {
@@ -94,8 +94,7 @@ function App() {
 		handleRecipeAdd,
 		handleRecipeDelete,
 		handleRecipeSelect,
-		handleRecipeChange,
-		handleChange
+		handleRecipeChange
 	};
 
 	return (
