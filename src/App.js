@@ -94,6 +94,7 @@ function App() {
 	}
 
 
+
 	//things in here can be accessed inside our ENTIRE application
 	const RecipeContextValue = {
 		//when key will be the same as value, in react can just specify once
@@ -102,6 +103,7 @@ function App() {
 		handleRecipeDelete,
 		handleRecipeSelect,
 		handleRecipeChange
+
 	};
 
 	return (

@@ -7,7 +7,11 @@ import Cook from "../Images/Cook.png";
 
 
 
+
+
 export default function Navbar() {
+
+	 
 	
 	return (
 		<>
@@ -16,9 +20,7 @@ export default function Navbar() {
 					<img className="cook-image" src={Cook} alt="Cook" height="90px" />
 				</div>
 				<div>
-					<Search 
-					// handleChange={handleChange} 
-					/>
+					<Search/>
 				</div>
 				<div>My Cookbook</div>
 				<div>External Links</div>

@@ -14,13 +14,14 @@ export default function Search() {
 		<>
 			<Form inline>
         <div>
-          <Button 
+          <a 
             variant="outline-success" 
             className="search--button"
+            href="./search"
           >
 					<FontAwesomeIcon icon={faSearch} />
           {/* Search  tooltip addd here */}
-				  </Button>
+				  </a>
                 </div>
 			</Form>
 		</>
