@@ -1,14 +1,14 @@
 /** @format */
 
-import React, { useContext } from "react";
+import React from "react";
 import Nav from "react-bootstrap/Nav";
 import Search from "./Search";
 import Cook from "../Images/Cook.png";
-import { RecipeContext } from "../App";
 
 
-export default function Navbar({ searchTerm }) {
-	const { handleChange } = useContext(RecipeContext);
+
+export default function Navbar() {
+	
 	return (
 		<>
 			<Nav className="my-nav">
@@ -17,8 +17,7 @@ export default function Navbar({ searchTerm }) {
 				</div>
 				<div>
 					<Search 
-					handleChange={handleChange} 
-					value={searchTerm}
+					// handleChange={handleChange} 
 					/>
 				</div>
 				<div>My Cookbook</div>
