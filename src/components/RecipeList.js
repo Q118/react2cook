@@ -15,12 +15,13 @@ export default function RecipeList({ recipes }) {
 		  recipe.toString().toLowerCase().includes(searchTerm)
 		);
 		setSearchResults(results);
+		
 	  }, [searchTerm]);
 
 	return (
 		<div className="recipe-list">
 			<div>
-				{searchResults.map((recipe) => {
+				{recipes.map((recipe) => {
 					return <Recipe key={recipe.id} {...recipe} />;
 				})}
 			</div>

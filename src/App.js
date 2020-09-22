@@ -1,11 +1,20 @@
 /** @format */
 import React, { useState, useEffect } from "react";
-import sampleRecipes from "./utils/sampleRecipes.json"
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+	Link,
+	useRouteMatch,
+} from "react-router-dom";
+
+import sampleRecipes from "./utils/sampleRecipes.json";
 import RecipeList from "./components/RecipeList";
 import Navbar from "./components/Navbar";
 import "./css/app.css";
 import { v4 as uuidv4 } from "uuid";
 import RecipeEdit from "./components/RecipeEdit";
+import SearchPage from "./pages/SearchPage";
 
 export const RecipeContext = React.createContext();
 const LOCAL_STORAGE_KEY = "cookingWithReact.recipes";
@@ -15,16 +24,16 @@ function App() {
 	const [selectedRecipeId, setSelectedRecipeId] = useState();
 	const [recipes, setRecipes] = useState(sampleRecipes);
 
-	const [searchTerm, setSearchTerm] = useState("");  
 	const [searchResults, setSearchResults] = useState([]);
+
+	const [searchTerm, setSearchTerm] = useState("");
+	// const [searchResults, setSearchResults] = useState([]);
 
 	//variable equal to finding out recipe from our recipes list
 	//for each recipe, we just want to compare the recipe ID to the ID of our selected recipe
 	const selectedRecipe = recipes.find(
 		(recipe) => recipe.id === selectedRecipeId
 	);
-
-
 
 	//on load
 	useEffect(() => {
@@ -88,93 +97,52 @@ function App() {
 		setRecipes(recipes.filter((recipe) => recipe.id !== id));
 	}
 
-	// function handleSearchChange(event) {
-		
-	// 	const filter = event.target.value;
-	// 	const filteredList = [...recipes];
-
-	// 	const newList = filteredList.filter((item) => {
-	// 		// merge data together, then see if user input is anywhere inside
-	// 		let values = Object.values(item).join("").toLowerCase();
-	// 		return values.indexOf(filter.toLowerCase()) !== -1;
-	// 	});
-		
-	// 	setRecipes(newList);
-	// }
-
 	function handleChange(event) {
-		setSearchTerm(event.target.value);
-	  };
+		const filter = event.target.value;
+		const filteredList = [...recipes];
 
-	//   function handleReset() {
+		const newList = filteredList.filter((item) => {
+			// merge data together, then see if user input is anywhere inside
+			let values = Object.values(item).join("").toLowerCase();
+			return values.indexOf(filter.toLowerCase()) !== -1;
+		});
+		setRecipes(newList);
+		console.log(newList);
+	}
 
-	//   }
-
-
-		//things in here can bve accessed inside our ENTIRE application
-		const RecipeContextValue = {
-			//when key will be the same as value, in react can just specify once
-			//wud have been "handleRecipeAdd: handleRecipeAdd"
-			handleRecipeAdd,
-			handleRecipeDelete,
-			handleRecipeSelect,
-			handleRecipeChange,
-			handleChange
-		};
+	//things in here can bve accessed inside our ENTIRE application
+	const RecipeContextValue = {
+		//when key will be the same as value, in react can just specify once
+		//wud have been "handleRecipeAdd: handleRecipeAdd"
+		handleRecipeAdd,
+		handleRecipeDelete,
+		handleRecipeSelect,
+		handleRecipeChange,
+		handleChange,
+	};
 
 	return (
-		<RecipeContext.Provider value={RecipeContextValue}>
-			<Navbar handleChange={handleChange} />
-			<RecipeList recipes={recipes} />
-			{selectedRecipe && <RecipeEdit recipe={selectedRecipe} />}
-			{/* This line above is saying, is there a selectedRecipe? if true then
-			its going to evaluate the next thing after the "&&", then it will return it
-			if the selectedRecipe is undefined it like short-circuits and doesn't return the second part
-			its the same as doing a turnery and the thing after the : wud be null */}
-		</RecipeContext.Provider>
+		<Router>
+			<RecipeContext.Provider value={RecipeContextValue}>
+				<div>
+					<Switch>
+						<Route exact path="/">
+							<Navbar handleChange={(e) => handleChange(e)} />
+							<RecipeList recipes={recipes} />
+							{selectedRecipe && <RecipeEdit recipe={selectedRecipe} />}
+							{/* This line above is saying, is there a selectedRecipe? if true then
+					its going to evaluate the next thing after the "&&", then it will return it
+					if the selectedRecipe is undefined it like short-circuits and doesn't return the second part
+					its the same as doing a turnery and the thing after the : wud be null */}
+						</Route>
+						<Route path="/search">
+							<SearchPage />
+						</Route>
+					</Switch>
+				</div>
+			</RecipeContext.Provider>
+		</Router>
 	);
 }
-
-// const sampleRecipes = [
-// 	{
-// 		id: 1,
-// 		name: "Plain Tofu",
-// 		servings: 3,
-// 		cookTime: "1:45",
-// 		instructions: "1. Put salt on tofu\n2. Put tofu in oven\n3. Eat tofu",
-// 		ingredients: [
-// 			{
-// 				id: 1,
-// 				name: "tofu ",
-// 				amount: "2 pounds ",
-// 			},
-// 			{
-// 				id: 2,
-// 				name: "Salt ",
-// 				amount: "1 tbs ",
-// 			},
-// 		],
-// 	},
-// 	{
-// 		id: 2,
-// 		name: "Plain Salmon",
-// 		servings: 5,
-// 		cookTime: "0:45",
-// 		instructions:
-// 			"1. Put garlic on salmon\n2. Put salmon in oven\n3. Eat salmon",
-// 		ingredients: [
-// 			{
-// 				id: 1,
-// 				name: "salmon ",
-// 				amount: "3 pounds ",
-// 			},
-// 			{
-// 				id: 2,
-// 				name: "garlic ",
-// 				amount: "2 tbs ",
-// 			},
-// 		],
-// 	},
-// ];
 
 export default App;

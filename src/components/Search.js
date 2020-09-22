@@ -1,14 +1,15 @@
 /** @format */
 
-import React from "react";
+import React, { useContext } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { RecipeContext } from "../App";
 
 
-export default function Search({ handleChange }) {
-
+export default function Search() {
+  const { handleChange } = useContext(RecipeContext);
   
 	return (
 		<>
@@ -18,7 +19,7 @@ export default function Search({ handleChange }) {
                   placeholder="Type to Filter" 
                   className="mr-sm-2"
                   id="search"
-                  onChange={handleChange}
+                  onChange={(e)=>handleChange(e)}
                 />
                 <div className="search--button__container">
           <Button 
