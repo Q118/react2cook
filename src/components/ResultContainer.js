@@ -38,18 +38,19 @@ export default function ResultContainer() {
 				searchResults.map((item) => (
 					<ResultCard
 						key={uuidv4()}
-						name={item.name}
+                        name={item.name}
+                        servings={item.servings}
 						cookTime={item.cookTime}
-						// description={item.description}
-						// image={item.image}
-						// link={item.link}
+						instructions={item.instructions}
+						ingredients={item.ingredients}
+						// add link here to recipe-edit route route
 					/>
 				))
 			) : (
 				<p className="noResText">No Results to Display</p>
 			)}
 			<div>
-				<a variant="outline-success" className="search--button" href="/">
+				<a variant="outline-success" className="search--button" href="./">
 					<Button>Back to CookBook</Button>
 				</a>
 			</div>
