@@ -7,6 +7,8 @@
     justify-content: flex-start;
     align-items: center;
     color: black;
+    border: #feae01 solid 4px;
+    border-radius: 6px;
 }
 
 .cook-image {

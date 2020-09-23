@@ -12,7 +12,7 @@
 
 .btn--primary {
     color: white;
-    background-color: #b1b8b6;
+    background-color: #02bf02
 }
 
 .btn--primary:hover {
@@ -29,15 +29,16 @@
 }
 
 .home--search--button {
-    background-color: #b1b8b6;
+    background-color: #02bf02;
     border-radius: 6px;
     padding: 6px;
     padding-right: 50px;
     padding-left: 50px;
+    color: white;
 }
 
 .home--search--button:hover {
-    background-color: #c04b09;
+    background-color:#d45b00;
 }
 
 .search--button__container  {

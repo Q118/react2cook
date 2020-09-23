@@ -9,9 +9,12 @@
     place-items: center;
     margin: 20px;
     margin-top: 40px;
-    border: rgb(211, 135, 211) double 6px;
+    /* border: rgb(211, 135, 211) double 6px; */
     border-radius: 10px;
     padding: 6px;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    row-gap: 50px;
 }
 
 .search--input {
