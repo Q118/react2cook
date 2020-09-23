@@ -38,22 +38,25 @@
     padding: 10px;
 }
 
-.edit--tooltip {
+/* .edit--tooltip {
     background-color: rgb(187, 190, 16);
     color: white;
     border-radius: 15px;
     border-style: dotted;
     font-size: 0.75em;
     /* offset: path("M 100 100 L 300 100 L 200 300 z") auto; */
-    animation: bounce 5s;
+    /* animation: bounce 5s;
     animation-direction: alternate; 
     animation-timing-function: cubic-bezier(.5, 0.05, 1, .5); 
     animation-iteration-count: infinite; 
     padding: 8px;
+} */ */
+
+.tippy-popper .tippy-tooltip.customized-theme * {
+    background-color: rgb(28, 43, 83)!important;    
 }
-
-
-.delete--tooltip {
+  
+/* .delete--tooltip {
     background-color: rgb(199, 136, 194);
     color: white;
     border-radius: 15px;
@@ -63,7 +66,7 @@
     animation: move 5s linear infinite;
     padding: 8px;
     
-}
+} */
 
 @keyframes move {
     from {
