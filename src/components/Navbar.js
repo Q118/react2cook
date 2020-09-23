@@ -5,7 +5,9 @@ import Nav from "react-bootstrap/Nav";
 import Search from "./Search";
 import Cook from "../Images/Cook.png";
 
+
 export default function Navbar() {
+
 	return (
 		<>
 			<Nav className="my-nav">
