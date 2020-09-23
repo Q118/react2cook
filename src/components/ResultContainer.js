@@ -49,11 +49,11 @@ export default function ResultContainer() {
 				) : (
 					<p className="noResText">No Results to Display</p>
 				)}
-				<div>
-					<a variant="outline-success" className="search--button" href="./">
-						<Button>Back to CookBook</Button>
-					</a>
-				</div>
+			</div>
+			<div className="return--button__container">
+				<a variant="outline-success" className="search--button" href="./">
+					<Button>Back to CookBook</Button>
+				</a>
 			</div>
 		</div>
 	);
