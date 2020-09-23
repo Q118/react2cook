@@ -15,7 +15,7 @@ export default function Search() {
 					data-tip data-for="happyFace"
 					href="./search"
 				>
-				<Button>
+				<Button className="home--search--button">
 					<FontAwesomeIcon icon={faSearch} />
 				</Button>
 				</a>
@@ -27,6 +27,4 @@ export default function Search() {
 	);
 }
 
-{
-	/**/
-}
+

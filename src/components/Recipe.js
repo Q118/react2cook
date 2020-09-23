@@ -3,11 +3,9 @@
 import React, { useContext } from "react";
 import IngredientList from "./IngredientList";
 import { RecipeContext } from "../App";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons'
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
-import Tooltip from 'react-bootstrap/Tooltip'
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
+import ReactTooltip from "react-tooltip";
 
 export default function Recipe(props) {
 	const { handleRecipeDelete, handleRecipeSelect } = useContext(RecipeContext);
@@ -19,42 +17,34 @@ export default function Recipe(props) {
 			<div className="recipe__header">
 				<h3 className="recipe__title">{name}</h3>
 				<div>
-					<OverlayTrigger 
-					    key="left"
-						placement="left"
-						overlay={
-						  <Tooltip 
-							  id="tooltip-left"
-							  className="edit--tooltip"
-						  >
-							<strong>Click to Edit</strong>
-						  </Tooltip>
-						}
-					>
-					<button
-						className="btn btn--primary mr-1"
-						onClick={() => handleRecipeSelect(id)}>
-						<FontAwesomeIcon icon={faEdit} />
-					</button>
-					</OverlayTrigger>
-					<OverlayTrigger 
-					    key="bottom"
-						placement="bottom"
-						overlay={
-						  <Tooltip 
-							  id="tooltip-bottom"
-							  className="delete--tooltip"
-						  >
-							<strong>Click to Delete</strong>
-						  </Tooltip>
-						}
-					>
-					<button
-						className="btn btn--danger"
-						onClick={() => handleRecipeDelete(id)}>
-						<FontAwesomeIcon icon={faTrash} />
-					</button>
-					</OverlayTrigger>
+					<a data-tip data-for="edit">
+						<button
+							className="btn btn--primary mr-1"
+							onClick={() => handleRecipeSelect(id)}>
+							<FontAwesomeIcon icon={faEdit} />
+						</button>
+					</a>
+					<ReactTooltip
+						id="edit"
+						type="dark"
+						effect="float"
+						place="bottom">
+						<span>Click to Edit</span>
+					</ReactTooltip>
+					<a data-tip data-for="delete">
+						<button
+							className="btn btn--danger"
+							onClick={() => handleRecipeDelete(id)}>
+							<FontAwesomeIcon icon={faTrash} />
+						</button>
+					</a>
+					<ReactTooltip
+						id="delete"
+						type="dark"
+						effect="float"
+						place="bottom">
+						<span>Click to Delete</span>
+					</ReactTooltip>
 				</div>
 			</div>
 			<div className="recipe__row">
