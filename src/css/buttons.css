@@ -28,6 +28,11 @@
     background-color: hsl(0, 100%, 35%)
 }
 
+.home--search--button {
+    background-color: aqua;
+    border-radius: 6px;
+    padding: 6px;
+}
 
 .search--button__container  {
     padding: 10px;

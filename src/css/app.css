@@ -22,6 +22,8 @@ html {
 body {
     padding: 0;
     margin: 0;
+    background-image: url("../Images/icons.jpg");
+    /* background-size: 550px 450px; */
 }
 
 .mr-1 {

@@ -1,5 +1,5 @@
 .my-nav {
-    background-color:  hsl(200, 100%, 35%);
+    background-color: purple;
     height: 100px;
     display: grid;
     grid-template-columns: repeat(4, auto);

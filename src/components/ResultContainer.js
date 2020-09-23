@@ -23,7 +23,7 @@ export default function ResultContainer() {
 	}, [searchTerm]);
 
 	return (
-		<div>
+		<div className="results--page">
 			<div className="search--container">
 				<input
 					type="text"

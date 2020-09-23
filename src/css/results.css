@@ -9,31 +9,42 @@
     place-items: center;
     margin: 20px;
     margin-top: 40px;
-    border: purple groove 6px;
+    border: rgb(211, 135, 211) double 6px;
     border-radius: 10px;
     padding: 6px;
 }
 
 .search--input {
-    border: purple groove 6px;
+    border: rgb(169, 248, 22) double 6px;
     border-radius: 10px;
     padding: 6px;
     background-color: hsl(0, 100%, 35%);
     color: white;
+    font-weight: bold;
 }
 
 input[type=text]:focus{
     background-color: hsl(200, 100%, 50%);
     color: black;
+    border: rgb(211, 135, 211) double 6px;
+  }
+
+  input[type=text]:hover{
+    background-color:  hsl(200, 100%, 50%);
+    color: black;
+    border: rgb(211, 135, 211) double 6px;
   }
 
 .search--button {
     background-color: hsl(200, 100%, 35%);
     width: inherit;
     color: white;
+    border-radius: 12px;
+    padding: 5px;
 }
 
 .search--button:hover {
     background-color: hsl(0, 100%, 50%);
 
 }
+

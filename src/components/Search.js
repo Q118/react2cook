@@ -13,7 +13,7 @@ export default function Search() {
 				<div>
 					<a
 						variant="outline-success"
-						className="search--button"
+						className="home--search--button"
 						href="./search">
 						<Button>
 							<FontAwesomeIcon icon={faSearch} />
