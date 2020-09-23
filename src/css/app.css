@@ -6,6 +6,7 @@
 @import 'recipe.css';
 @import 'recipe-edit.css';
 @import 'navbar.css';
+@import 'results.css';
 
 
 *, *::before, *::after {
