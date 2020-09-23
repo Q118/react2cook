@@ -10,10 +10,7 @@ function ResultCard(props) {
 
 	return (
 		<article className="uk-comment resultCard" key={uuidv4()}>
-			<div className="recipe__row">
-				<span className="recipe__label">Name: </span>
-				<span className="recipe__value">{name}</span>
-			</div>
+			<h3 className="recipe__title">{name}</h3>
 			<div className="recipe__row">
 				<span className="recipe__label">Cook Time: </span>
 				<span className="recipe__value">{cookTime}</span>
@@ -34,6 +31,7 @@ function ResultCard(props) {
 					<IngredientList ingredients={ingredients} />
 				</div>
 			</div>
+            < hr />
 		</article>
 	);
 }

@@ -8,17 +8,13 @@ import Button from "react-bootstrap/Button";
 const recipes = JSON.parse(localStorage.getItem("cookingWithReact.recipes"));
 
 export default function ResultContainer() {
-	const [searchTerm, setSearchTerm] = React.useState("");
+	const [searchTerm, setSearchTerm] = React.useState("Filter by Keyword");
 	const [searchResults, setSearchResults] = React.useState([]);
 	const handleChange = (event) => {
-		recipes.reduce((obj, item) => {
-			obj[item.id] = item;
-			return obj;
-		}, {});
-
 		setSearchTerm(event.target.value);
 		console.log(recipes);
 	};
+	
 	React.useEffect(() => {
 		const results = recipes.filter((recipe) =>
 			recipe.name.toLowerCase().includes(searchTerm)
