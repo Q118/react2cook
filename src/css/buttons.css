@@ -12,40 +12,34 @@
 
 .btn--primary {
     color: white;
-    background-color: hsl(200, 100%, 50%);
+    background-color: #b1b8b6;
 }
 
 .btn--primary:hover {
-    background-color: hsl(200, 100%, 35%)
+    background-color: #01bccb;
 }
 
 .btn--danger {
     color: white;
-    background-color: hsl(0, 100%, 50%);
+    background-color: #c04b09;
 }
 
 .btn--danger:hover {
-    background-color: hsl(0, 100%, 35%)
+    background-color: #01bccb;
 }
 
 .home--search--button {
-    background-color: aqua;
+    background-color: #b1b8b6;
     border-radius: 6px;
     padding: 6px;
     padding-right: 50px;
     padding-left: 50px;
 }
 
+.home--search--button:hover {
+    background-color: #c04b09;
+}
+
 .search--button__container  {
     padding: 10px;
 }
-
-/* @keyframes move {
-    from {
-      offset-distance: 0%;
-    }
-  
-    to {
-      offset-distance: 100%;
-    }
-  } */

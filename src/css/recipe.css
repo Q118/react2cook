@@ -56,9 +56,6 @@
     color: black;
 }
 
-
-
-
 .recipe__value {
     font-weight: 300;
 }
@@ -70,4 +67,11 @@
 
 .recipe__instructions {
     white-space: pre-wrap;
+}
+
+.button--container {
+    background-color:#feae01;
+    border-radius: 6px;
+    padding: 7px 20px 7px 20px;
+    border: solid #d45b00 4px;
 }
