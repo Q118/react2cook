@@ -37,5 +37,60 @@
 				"amount": "2 tbs "
 			}
 		]
+	},
+	{
+		"id": 3,
+		"name": "Granola Bowl",
+		"servings": 1,
+		"cookTime": "0:15",
+		"instructions":
+			"1. Put blueberries, oats, milk in bowl\n2. Microwave bowl for 3min.\n3. Add chocolate chips and pb on top.\n4.Sit down and enjoy.",
+		"ingredients": [
+			{
+				"id": 1,
+				"name": "frozen blueberries ",
+				"amount": "1/2 cup "
+			},
+			{
+				"id": 2,
+				"name": "oats ",
+				"amount": "3/4 cup "
+			},
+			{
+				"id": 3,
+				"name": "milk of choice ",
+				"amount": "1 sec "
+			},
+			{
+				"id": 4,
+				"name": "chocolate chips ",
+				"amount": "1/4 cup "
+			},
+			{
+				"id": 5,
+				"name": "peanut butter(pb) ",
+				"amount": "1 tbs "
+			}
+		]
+	},
+	{
+		"id": 4,
+		"name": "Bagel Snack",
+		"servings": 5,
+		"cookTime": "0:45",
+		"instructions":
+			"1. Put bagel in toaster\n2. Spread butter on toasted bagel.  \n3. Eat bagel",
+		"ingredients": [
+			{
+				"id": 1,
+				"name": "bagel ",
+				"amount": "3 lbs "
+			},
+			{
+				"id": 2,
+				"name": "butter ",
+				"amount": "2 tbs "
+			}
+		]
 	}
 ]

@@ -6,9 +6,10 @@ import { v4 as uuidv4 } from "uuid";
 import "../css/app.css";
 import Card from "react-bootstrap/Card";
 import Spongebob from "../Images/spongebob.gif";
+import IngredientList from "./IngredientList";
 
 function ResultCard(props) {
-	const { id, name } = props;
+	const { id, name, ingredients } = props;
 	const { handleRecipeSelect } = useContext(RecipeContext);
 
 	return (
@@ -25,11 +26,18 @@ function ResultCard(props) {
 				<Card.Body>
 					<Card.Title className="recipe__title">{name}</Card.Title>
 					<Card.Img variant="top" src={Spongebob} />
+					<Card.Text className="">
+						<span className="recipe__label recipe__label-ing">
+							Ingredients:{" "}
+						</span>
+						<span className="recipe__value recipe__value--indented">
+							<IngredientList ingredients={ingredients} />
+						</span>
+					</Card.Text>
 				</Card.Body>
-				<Card.Link 
-				href="/"
-				onClick={handleRecipeSelect(id)}
-				>Edit this Recipe</Card.Link>
+				<Card.Link href="/" target="_blank">
+					More Recipes Like This
+				</Card.Link>
 			</Card>
 		</article>
 	);
