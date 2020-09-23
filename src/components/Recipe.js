@@ -15,56 +15,48 @@ export default function Recipe(props) {
 	return (
 		<div className="recipe">
 			<div className="recipe__header">
-				<h3 className="recipe__title">{name}</h3>
+			<h3 className="recipe__title">{name}</h3>
 				<div>
-					<a data-tip data-for="edit">
+					<span data-tip data-for="edit">
 						<button
 							className="btn btn--primary mr-1"
 							onClick={() => handleRecipeSelect(id)}>
 							<FontAwesomeIcon icon={faEdit} />
 						</button>
-					</a>
-					<ReactTooltip
-						id="edit"
-						type="dark"
-						effect="float"
-						place="bottom">
+					</span>
+					<ReactTooltip id="edit" type="dark" effect="float" place="bottom">
 						<span>Click to Edit</span>
 					</ReactTooltip>
-					<a data-tip data-for="delete">
+					<span data-tip data-for="delete">
 						<button
 							className="btn btn--danger"
 							onClick={() => handleRecipeDelete(id)}>
 							<FontAwesomeIcon icon={faTrash} />
 						</button>
-					</a>
-					<ReactTooltip
-						id="delete"
-						type="dark"
-						effect="float"
-						place="bottom">
+					</span>
+					<ReactTooltip id="delete" type="dark" effect="float" place="bottom">
 						<span>Click to Delete</span>
 					</ReactTooltip>
 				</div>
 			</div>
 			<div className="recipe__row">
-				<span className="recipe__label">Cook Time: </span>
+				<span className="recipe__label recipe__label-ct">Cook Time: </span>
 				<span className="recipe__value">{cookTime}</span>
 			</div>
 			<div className="recipe__row">
-				<span className="recipe__label">Servings: </span>
+				<span className="recipe__label recipe__label-sg">Servings: </span>
 				<span className="recipe__value">{servings}</span>
 			</div>
 			<div className="recipe__row">
-				<span className="recipe__label">Instructions: </span>
+				<span className="recipe__label recipe__label-ins">Instructions: </span>
 				<div className="recipe__value recipe__instructions recipe__value--indented">
-					{instructions}
+					<span className="just-i">{instructions}</span>
 				</div>
 			</div>
 			<div className="recipe__row">
-				<span className="recipe__label">Ingredients: </span>
+				<span className="recipe__label recipe__label-ing">Ingredients: </span>
 				<div className="recipe__value recipe__value--indented">
-					<IngredientList ingredients={ingredients} />
+				<IngredientList ingredients={ingredients} />
 				</div>
 			</div>
 		</div>

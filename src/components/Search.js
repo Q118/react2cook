@@ -12,14 +12,14 @@ export default function Search() {
 		<>
 			<Form inline>
 				<a 
-					data-tip data-for="happyFace"
+					data-tip data-for="search"
 					href="./search"
 				>
 				<Button className="home--search--button">
 					<FontAwesomeIcon icon={faSearch} />
 				</Button>
 				</a>
-				<ReactTooltip id="happyFace" type="dark" effect="float" place="bottom">
+				<ReactTooltip id="search" type="dark" effect="float" place="bottom">
 					<span>Click to Search all Recipes</span>
 				</ReactTooltip>
 			</Form>

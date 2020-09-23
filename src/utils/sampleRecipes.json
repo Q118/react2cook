@@ -9,11 +9,11 @@
 			{
 				"id": 1,
 				"name": "tofu ",
-				"amount": "2 pounds "
+				"amount": "2 lbs "
 			},
 			{
 				"id": 2,
-				"name": "Salt ",
+				"name": "salt ",
 				"amount": "1 tbs "
 			}
 		]
@@ -24,12 +24,12 @@
 		"servings": 5,
 		"cookTime": "0:45",
 		"instructions":
-			"1. Put garlic on salmon\n2. Put salmon in oven\n3. Eat salmon",
+			"1. Put garlic on salmon\n2. Put salmon in oven  \n3. Eat salmon",
 		"ingredients": [
 			{
 				"id": 1,
 				"name": "salmon ",
-				"amount": "3 pounds "
+				"amount": "3 lbs "
 			},
 			{
 				"id": 2,

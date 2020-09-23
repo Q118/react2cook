@@ -1,8 +1,7 @@
 .recipe {
-    padding: 20px;
-    padding-bottom: 40px;
+    padding: 40px;
+    padding-bottom: 60px;
     border-bottom: 1px solid black;
-
 }
 
 .recipe:last-child {
@@ -20,17 +19,45 @@
 }
 
 .recipe__title {
-    margin: 0;
+    margin: 5px;
     font-size: 1.75em;
+    background-color:#feae01;
+    border-radius: 6px;
+    padding: 4px;
+
 }
 
 .recipe__row {
     margin-top: 5px;
+    background-color: #045c06;
+    color: white;
+    max-width: fit-content;
+    border-radius: 6px;
+    padding: 4px;
 }
 
 .recipe__label {
     margin-right: 5px;
+    
 }
+
+.recipe__label-ing {
+    background-color:#feae01;
+    border-radius: 6px;
+    color: black;
+    padding: 4px;
+    
+}
+
+.recipe__label-ins {
+    background-color:#feae01;
+    border-radius: 6px;
+    padding: 4px;
+    color: black;
+}
+
+
+
 
 .recipe__value {
     font-weight: 300;
