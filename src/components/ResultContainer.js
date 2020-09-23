@@ -2,9 +2,10 @@
 
 import React from "react";
 import ResultCard from "./ResultCard";
+import { v4 as uuidv4 } from "uuid";
 
 
-const recipes = [localStorage.getItem("cookingWithReact.recipes")];
+const recipes = JSON.parse(localStorage.getItem("cookingWithReact.recipes"));
 
 export default function ResultContainer() {
 	const [searchTerm, setSearchTerm] = React.useState("");
@@ -20,7 +21,7 @@ export default function ResultContainer() {
 	};
 	React.useEffect(() => {
 		const results = recipes.filter((recipe) =>
-			recipe.toLowerCase().includes(searchTerm)
+			recipe.name.toLowerCase().includes(searchTerm)
 		);
 		setSearchResults(results);
 	}, [searchTerm]);
@@ -36,7 +37,7 @@ export default function ResultContainer() {
 			{searchResults.length ? (
                 searchResults.map(item =>
                     <ResultCard
-                        key={item.id}
+                        key={uuidv4()}
                         name={item.name}
                         cookTime={item.cookTime}
                         // description={item.description}
