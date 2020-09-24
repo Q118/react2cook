@@ -15,7 +15,7 @@ export default function Recipe(props) {
 	return (
 		<div className="recipe">
 			<div className="recipe__header">
-			<h3 className="recipe__title">{name}</h3>
+				<h3 className="recipe__title">{name}</h3>
 				<div className="button--container">
 					<span data-tip data-for="edit">
 						<button
@@ -56,7 +56,7 @@ export default function Recipe(props) {
 			<div className="recipe__row">
 				<span className="recipe__label recipe__label-ing">Ingredients: </span>
 				<div className="recipe__value recipe__value--indented">
-				<IngredientList ingredients={ingredients} />
+					<IngredientList ingredients={ingredients} />
 				</div>
 			</div>
 		</div>

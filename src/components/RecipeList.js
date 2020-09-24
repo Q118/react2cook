@@ -3,11 +3,10 @@
 import React, { useContext } from "react";
 import Recipe from "./Recipe";
 import { RecipeContext } from "../App";
-
+import ReactTooltip from "react-tooltip";
 
 export default function RecipeList({ recipes }) {
 	const { handleRecipeAdd } = useContext(RecipeContext);
-
 
 	return (
 		<div className="recipe-list">
@@ -17,9 +16,14 @@ export default function RecipeList({ recipes }) {
 				})}
 			</div>
 			<div className="recipe-list__add-recipe-btn-container">
-				<button className="btn btn--primary" onClick={handleRecipeAdd}>
-					Add Recipe
-				</button>
+				<span data-tip data-for="add-new">
+					<button className="btn btn--primary" onClick={handleRecipeAdd}>
+						Add Recipe
+					</button>
+				</span>
+				<ReactTooltip id="add-new" type="dark" effect="float" place="top">
+					<span>Click to Add a New Recipe.</span>
+				</ReactTooltip>
 			</div>
 		</div>
 	);

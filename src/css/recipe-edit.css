@@ -24,6 +24,9 @@
     color: white;
 }
 
+.recipe-edit__remove-button:hover  {
+    background-color: #02bf02;
+}
 .recipe-edit__details-grid {
     display: grid;
     grid-template-columns: auto 1fr;

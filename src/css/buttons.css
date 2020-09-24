@@ -12,7 +12,7 @@
 
 .btn--primary {
     color: white;
-    background-color: #02bf02
+    background-color: #02bf02;
 }
 
 .btn--add {
@@ -49,3 +49,4 @@
 .search--button__container  {
     padding: 10px;
 }
+
