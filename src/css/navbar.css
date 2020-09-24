@@ -34,3 +34,11 @@
     font-style: normal;
     margin-left: 5px;
 }
+
+.my--link:hover {
+    background-color:#feae01;
+}
+
+.github--link:hover {
+    background-color:#feae01;
+}
