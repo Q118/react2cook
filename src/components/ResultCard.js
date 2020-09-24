@@ -8,7 +8,7 @@ import Spongebob from "../Images/spongebob.gif";
 import IngredientList from "./IngredientList";
 
 function ResultCard(props) {
-	const { id, name, ingredients } = props;
+	const { name, ingredients } = props;
 
 	return (
 		<article className="uk-comment resultCard" key={uuidv4()}>
