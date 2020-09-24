@@ -45,24 +45,24 @@ input[type=text]:focus{
   }
 
 .search--button {
-    background-color: #01bccb;
+    background-color:#01bccb;
     width: inherit;
     color: white;
     border-radius: 12px;
     padding: 5px;
+    border: solid black 4px;
 }
 
 .search--button:hover {
     background-color: hsl(0, 100%, 50%);
-
 }
 
 .wiki--container {
     background-color: #01bccb;
     padding: 6px;
-    /* margin-bottom: 12px; */
     margin: 8px;
     border-radius: 4px;
+    color: black;
 }
 
 .wiki--container:hover {
