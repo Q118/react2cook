@@ -1,70 +1,81 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# My Cookbook 🍲 🍱 🥘
 
-//react-semantic-ui.com
+![](https://github.com/q118/react2cook/blob/master/demo.gif)
 
-## Available Scripts
+`
+My Cookbook is an application that allows users to add, save, edit, delete, 
+and research further their own recipes.
+` 
 
-In the project directory, you can run:
 
-### `npm start`
+## Table of Contents 🗃
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* [User-Story](#User-Story)
+* [Installation](#Installation)
+* [Deployment](#Deployment)
+* [Technologies](#Technologies)
+* [License](#License)
+* [Contact](#Contact)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `npm test`
+## User-Story 🧑‍🍳 
+```
+AS a home-chef, 
+I WANT an app that will save my recipes
+SO THAT I can add, delete, and edit them.
+WHEN I select a recipe to edit 
+THEN I am presented with the current inputs to update.
+WHEN I select add new
+THEN I am presented with blank inputs to fill in.
+WHEN I select search
+THEN I am presented with the Results Page which allows me to filter for certain recipes.
+WHEN I select to research the recipe
+THEN I am taken to an external website. 
+WHEN I select back to recipes
+THEN I am returned to the main page.
+```
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Installation 🔧
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Assumes local installation of [Node.js](https://nodejs.org)
+To run the project locally:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+* Instal dependencies; while in the root directory, run: `npm install`
+* After all installations complete, run: `npm start`
+* View the app running on <http://localhost:3000>.
+* Enjoy and create!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Deployment 📺
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* [View the live app on Netlify here!](https://brave-snyder-9f9d29.netlify.app/)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Technologies 🧰
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Technologies | Utilized
+------------ | -------------
+React | react-dom 
+React-router-dom | Javascript
+React-scripts | React-tooltip
+uuid | semantic-ui-react
+semantic-ui-css | React-bootstrap
+FontAwesome | nodemon
+esLint | JSX
+HTML5 | CSS3
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## License 🛡
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![](https://img.shields.io/badge/My-Cookbook-yellow)
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Contact 📬
 
-### Analyzing the Bundle Size
+### Please reach out to me with any questions/comments/suggestions!
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* [Portfolio](https:shelbyrothman.com)
+* [GitHub](https://github.com/q118)
+* [Email](mailto:shelbyfish91@gmail.com)
+* [LinkedIn](https://www.linkedin.com/in/shelby-anne-rothman/)
