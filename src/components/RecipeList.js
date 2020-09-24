@@ -4,6 +4,8 @@ import React, { useContext } from "react";
 import Recipe from "./Recipe";
 import { RecipeContext } from "../App";
 import ReactTooltip from "react-tooltip";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus, faRing } from "@fortawesome/free-solid-svg-icons";
 
 export default function RecipeList({ recipes }) {
 	const { handleRecipeAdd } = useContext(RecipeContext);
@@ -18,7 +20,8 @@ export default function RecipeList({ recipes }) {
 			<div className="recipe-list__add-recipe-btn-container">
 				<span data-tip data-for="add-new">
 					<button className="btn btn--primary" onClick={handleRecipeAdd}>
-						Add Recipe
+					<FontAwesomeIcon icon={faPlus} /> {" "}
+					<FontAwesomeIcon icon={faRing} />
 					</button>
 				</span>
 				<ReactTooltip id="add-new" type="dark" effect="float" place="top">
