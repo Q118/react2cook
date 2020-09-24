@@ -1,6 +1,6 @@
 .my-nav {
     background-color:#01bccb;
-    height: 100px;
+    max-height: fit-content;
     display: grid;
     grid-template-columns: repeat(4, auto);
     column-gap: 250px;
@@ -9,10 +9,16 @@
     color: black;
     border: #feae01 solid 4px;
     border-radius: 6px;
+
 }
 
 .cook-image {
     padding-left: 10px;
     padding-right: 20px;
     color: white;
+    margin: 5px;
+}
+
+.app--title__container {
+
 }

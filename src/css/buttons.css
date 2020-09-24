@@ -31,10 +31,11 @@
 .home--search--button {
     background-color: #02bf02;
     border-radius: 6px;
-    padding: 6px;
+    border: solid black 4px;
+    padding: 10px;
     padding-right: 50px;
     padding-left: 50px;
-    color: white;
+    color: black;
 }
 
 .home--search--button:hover {

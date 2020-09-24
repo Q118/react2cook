@@ -17,8 +17,12 @@ export default function Navbar() {
 				<div>
 					<Search />
 				</div>
-				<div>My Cookbook</div>
-				<div>External Links</div>
+				<div className="app--title__container">
+					<h1>My Cookbook</h1>
+				</div>
+				<div>
+					External Links
+				</div>
 			</Nav>
 		</>
 	);
