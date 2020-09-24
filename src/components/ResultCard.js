@@ -1,7 +1,6 @@
 /** @format */
 
-import React, { useContext } from "react";
-import { RecipeContext } from "../App";
+import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import "../css/app.css";
 import Card from "react-bootstrap/Card";
@@ -10,15 +9,6 @@ import IngredientList from "./IngredientList";
 
 function ResultCard(props) {
 	const { id, name, ingredients } = props;
-	const { handleRecipeSelect, selectedRecipeId } = useContext(RecipeContext);
-
-	// function handleResearch() {
-		
-	// 	const wikiName = JSON.stringify(ingredients[0].name) 
-	// 	const url = { `https://en.wikipedia.org/wiki/${wikiName}` }
-	// 	window.location.href = url ;
-	// 	console.log(wikiName)
-	// }
 
 	return (
 		<article className="uk-comment resultCard" key={uuidv4()}>
@@ -43,12 +33,13 @@ function ResultCard(props) {
 						</span>
 					</Card.Text>
 				</Card.Body>
-				<Card.Link 
-				// onClick={()=> handleResearch()} 
-				// target="_blank"
-				>
-					<a href={ `https://en.wikipedia.org/wiki/${ingredients[0].name}` }>More Recipes Like This</a>
-				</Card.Link>
+				<span className="wiki--container">
+					<Card.Link>
+						<a href={`https://en.wikipedia.org/wiki/${ingredients[0].name}`}>
+							More Recipes Like This
+						</a>
+					</Card.Link>
+				</span>
 			</Card>
 		</article>
 	);

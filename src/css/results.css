@@ -45,7 +45,7 @@ input[type=text]:focus{
   }
 
 .search--button {
-    background-color: hsl(200, 100%, 35%);
+    background-color: #01bccb;
     width: inherit;
     color: white;
     border-radius: 12px;
@@ -57,3 +57,15 @@ input[type=text]:focus{
 
 }
 
+.wiki--container {
+    background-color: #01bccb;
+    padding: 6px;
+    /* margin-bottom: 12px; */
+    margin: 8px;
+    border-radius: 4px;
+}
+
+.wiki--container:hover {
+    background-color:#feae01;
+
+}
