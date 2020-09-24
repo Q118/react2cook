@@ -26,3 +26,11 @@
     border: black solid 2px;
     padding: 10px;
 }
+
+.my--link {
+    color: black;
+    border: black solid 2px;
+    padding: 10px;
+    font-style: normal;
+    margin-left: 5px;
+}
