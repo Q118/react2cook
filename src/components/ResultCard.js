@@ -10,7 +10,15 @@ import IngredientList from "./IngredientList";
 
 function ResultCard(props) {
 	const { id, name, ingredients } = props;
-	const { handleRecipeSelect } = useContext(RecipeContext);
+	const { handleRecipeSelect, selectedRecipeId } = useContext(RecipeContext);
+
+	// function handleResearch() {
+		
+	// 	const wikiName = JSON.stringify(ingredients[0].name) 
+	// 	const url = { `https://en.wikipedia.org/wiki/${wikiName}` }
+	// 	window.location.href = url ;
+	// 	console.log(wikiName)
+	// }
 
 	return (
 		<article className="uk-comment resultCard" key={uuidv4()}>
@@ -35,8 +43,11 @@ function ResultCard(props) {
 						</span>
 					</Card.Text>
 				</Card.Body>
-				<Card.Link href="/" target="_blank">
-					More Recipes Like This
+				<Card.Link 
+				// onClick={()=> handleResearch()} 
+				// target="_blank"
+				>
+					<a href={ `https://en.wikipedia.org/wiki/${ingredients[0].name}` }>More Recipes Like This</a>
 				</Card.Link>
 			</Card>
 		</article>
