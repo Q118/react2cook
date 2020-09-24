@@ -58,7 +58,7 @@ export default function RecipeEdit({ recipe }) {
 			</div>
 			<div className="recipe-edit__details-grid">
 				<label htmlFor="name" className="recipe-edit__label">
-					Name
+					<span className="just-ed">Name</span>
 				</label>
 				<input
 					type="name"
@@ -69,7 +69,7 @@ export default function RecipeEdit({ recipe }) {
 					className="recipe-edit__input"
 				/>
 				<label htmlFor="cookTime" className="recipe-edit__label">
-					Cook Time
+					<span className="just-ed">Cook Time</span>
 				</label>
 				<input
 					type="name"
@@ -80,7 +80,7 @@ export default function RecipeEdit({ recipe }) {
 					className="recipe-edit__input"
 				/>
 				<label htmlFor="servings" className="recipe-edit__label">
-					Servings
+					<span className="just-ed">Servings</span>
 				</label>
 				<input
 					type="number"
@@ -94,7 +94,7 @@ export default function RecipeEdit({ recipe }) {
 					className="recipe-edit__input"
 				/>
 				<label htmlFor="instructions" className="recipe-edit__label">
-					Instructions
+					<span className="just-ed">Instructions</span>
 				</label>
 				<textarea
 					name="instructions"
@@ -105,10 +105,16 @@ export default function RecipeEdit({ recipe }) {
 				/>
 			</div>
 			<br />
-			<label className="recipe-edit__label">Ingredients</label>
+			<label className="recipe-edit__label">
+				<span className="just-ed">Ingredients</span>
+			</label>
 			<div className="recipe-edit__ingredient-grid">
-				<div>Name</div>
-				<div>Amount</div>
+				<div>
+					<span className="just-ed">Name</span>
+				</div>
+				<div>
+					<span className="just-ed">Amount</span>
+				</div>
 				<div></div>
 				{recipe.ingredients.map((ingredient) => (
 					<RecipeIngredientEdit
@@ -121,7 +127,7 @@ export default function RecipeEdit({ recipe }) {
 			</div>
 			<div className="recipe-edit__add-ingredient-btn-container">
 				<button
-					className="btn btn--primary"
+					className="btn btn--primary btn--add"
 					onClick={() => handleIngredientAdd()}>
 					Add Ingredient
 				</button>
