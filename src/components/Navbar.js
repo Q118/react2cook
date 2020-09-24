@@ -4,6 +4,9 @@ import React from "react";
 import Nav from "react-bootstrap/Nav";
 import Search from "./Search";
 import Cook from "../Images/Cook.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCode, faCodeBranch } from "@fortawesome/free-solid-svg-icons";
+import Link from "react-bootstrap/Button";
 
 export default function Navbar() {
 	return (
@@ -19,7 +22,13 @@ export default function Navbar() {
 					<Search />
 				</div>
 				<div className="links__container">
-					External Links
+					<Link 
+					  href="https://github.com/Q118/react2cook"
+					  className="github--link"
+					>
+						<FontAwesomeIcon icon={faCode} />{" "}
+						<FontAwesomeIcon icon={faCodeBranch} />
+					</Link>
 				</div>
 			</Nav>
 		</>

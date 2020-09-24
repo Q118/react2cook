@@ -16,3 +16,13 @@
     color: white;
     margin-left: 10px;
 }
+
+.links__container {
+    color: black;
+}
+
+.github--link {
+    color: black;
+    border: black solid 2px;
+    padding: 10px;
+}
