@@ -2,6 +2,8 @@
     display: grid;
     place-items: center;
     margin: 20px;
+    
+    
 }
 
 .return--button__container {
@@ -15,7 +17,6 @@
     place-items: center;
     margin: 20px;
     margin-top: 40px;
-    /* border: rgb(211, 135, 211) double 6px; */
     border-radius: 10px;
     padding: 6px;
     display: grid;
@@ -24,24 +25,28 @@
 }
 
 .search--input {
-    border: rgb(169, 248, 22) double 6px;
-    border-radius: 10px;
-    padding: 6px;
-    background-color: hsl(0, 100%, 35%);
-    color: white;
+   padding: 6px;
+   background-color: #02bf02;
+    /* background-color: hsl(0, 100%, 35%); */
+    color:black;
     font-weight: bold;
+    border-radius: 12px;
+    padding: 5px;
+    border: solid black 4px;
+    padding: 25px;
+    font-size: 1.2em;
 }
 
 input[type=text]:focus{
     background-color: hsl(200, 100%, 50%);
     color: black;
-    border: rgb(211, 135, 211) double 6px;
+    border:purple double 10px;
   }
 
   input[type=text]:hover{
     background-color:  hsl(200, 100%, 50%);
     color: black;
-    border: rgb(211, 135, 211) double 6px;
+    border: purple double 6px;
   }
 
 .search--button {

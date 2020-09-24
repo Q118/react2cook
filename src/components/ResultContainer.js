@@ -43,7 +43,6 @@ export default function ResultContainer() {
 							cookTime={item.cookTime}
 							instructions={item.instructions}
 							ingredients={item.ingredients}
-							// add link here to recipe-edit route route
 						/>
 					))
 				) : (
