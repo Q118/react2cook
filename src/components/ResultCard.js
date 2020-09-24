@@ -35,7 +35,11 @@ function ResultCard(props) {
 				</Card.Body>
 				<span className="wiki--container">
 					<Card.Link>
-						<a href={`https://en.wikipedia.org/wiki/${ingredients[0].name}`}>
+						<a 
+							href={`https://en.wikipedia.org/wiki/${ingredients[0].name}`}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
 							More Recipes Like This
 						</a>
 					</Card.Link>

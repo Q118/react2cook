@@ -38,16 +38,48 @@
 }
 
 input[type=text]:focus{
-    background-color: hsl(200, 100%, 50%);
+    background-color: #01bccb;
     color: black;
     border:purple double 10px;
   }
 
   input[type=text]:hover{
-    background-color:  hsl(200, 100%, 50%);
+    background-color: #01bccb;
     color: black;
     border: purple double 6px;
   }
+
+  input[type=name]:focus{
+    background-color: #01bccb;
+    color: black;
+    border:purple double 10px;
+  }
+
+  input[type=name]:hover{
+    background-color: #01bccb;
+    color: black;
+    border: purple double 6px;
+  }
+
+  input[type=number]:focus{
+    background-color: #01bccb;
+    color: black;
+    border:purple double 10px;
+  }
+
+  input[type=number]:hover{
+    background-color: #01bccb;
+    color: black;
+    border: purple double 6px;
+  }
+
+  textArea:focus{
+    background-color: #01bccb;
+    color: black;
+    border:purple double 10px;
+  }
+
+
 
 .search--button {
     background-color:#01bccb;

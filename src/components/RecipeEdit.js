@@ -97,6 +97,7 @@ export default function RecipeEdit({ recipe }) {
 					<span className="just-ed">Instructions</span>
 				</label>
 				<textarea
+					type="name"
 					name="instructions"
 					className="recipe-edit__input"
 					onChange={(e) => handleChange({ instructions: e.target.value })}

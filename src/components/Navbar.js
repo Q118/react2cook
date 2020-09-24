@@ -28,24 +28,29 @@ export default function Navbar() {
 				</div>
 				<div className="links__container">
 					<span data-tip data-for="github">
-					<Link
-						href="https://github.com/Q118/react2cook"
-						className="github--link">
-						<FontAwesomeIcon icon={faCode} />{" "}
-						<FontAwesomeIcon icon={faCodeBranch} />
-					</Link>
+						<Link
+							href="https://github.com/Q118/react2cook"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="github--link">
+							<FontAwesomeIcon icon={faCode} />{" "}
+							<FontAwesomeIcon icon={faCodeBranch} />
+						</Link>
 					</span>
-					<ReactTooltip id="github"type="dark" effect="float" place="bottom">
-					<span>View Source Code</span>
+					<ReactTooltip id="github" type="dark" effect="float" place="bottom">
+						<span>View Source Code</span>
 					</ReactTooltip>
 					<span data-tip data-for="user">
-					<Link href="https://github.com/Q118/react2cook" className="my--link">
-						<FontAwesomeIcon icon={faUser} />
-						{/* More from the Developer */}
-					</Link>
+						<Link
+							href="https://shelbyrothman.com/#portfolio"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="my--link">
+							<FontAwesomeIcon icon={faUser} />
+						</Link>
 					</span>
-					<ReactTooltip id="user"type="dark" effect="float" place="bottom">
-					<span>View Source Code</span>
+					<ReactTooltip id="user" type="dark" effect="float" place="bottom">
+						<span>More from the Developer</span>
 					</ReactTooltip>
 				</div>
 			</Nav>
