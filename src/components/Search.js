@@ -13,7 +13,7 @@ export default function Search() {
 			<Form inline>
 				<a 
 					data-tip data-for="search"
-					href="./search"
+					href="/search"
 				>
 				<Button className="home--search--button">
 					<FontAwesomeIcon icon={faSearch} />
